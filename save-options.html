@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Options</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Save Options</h1>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </header>
+        
+        <main>
+            <div class="save-options-grid">
+                <div class="save-option" onclick="saveAs('pdf')">
+                    <div class="icon">📄</div>
+                    <h3>Save as PDF</h3>
+                </div>
+                
+                <div class="save-option" onclick="saveAs('word')">
+                    <div class="icon">📝</div>
+                    <h3>Save as Word</h3>
+                </div>
+                
+                <div class="save-option" onclick="saveAs('note')">
+                    <div class="icon">📓</div>
+                    <h3>Save as Note</h3>
+                </div>
+                
+                <div class="save-option" onclick="saveAs('excel')">
+                    <div class="icon">📊</div>
+                    <h3>Save as Excel</h3>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <button onclick="window.location.href='text-conversion.html'" class="btn-secondary">Back</button>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script>
+        function saveAs(format) {
+            // Get the extracted text from session storage
+            const extractedText = sessionStorage.getItem('extractedText');
+            
+            // Process based on format
+            switch(format) {
+                case 'pdf':
+                    // PDF generation logic
+                    alert('PDF generation would happen here');
+                    window.location.href = 'download.html?format=pdf';
+                    break;
+                case 'word':
+                    // Word generation logic
+                    alert('Word document generation would happen here');
+                    window.location.href = 'download.html?format=docx';
+                    break;
+                case 'note':
+                    // Note generation logic
+                    alert('Note generation would happen here');
+                    window.location.href = 'download.html?format=txt';
+                    break;
+                case 'excel':
+                    // Excel generation logic
+                    alert('Excel generation would happen here');
+                    window.location.href = 'download.html?format=xlsx';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

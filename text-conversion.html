@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Conversion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Extracted Text</h1>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </header>
+        
+        <main>
+            <div class="text-conversion-container">
+                <div class="image-preview">
+                    <img id="conversion-image" src="" alt="Image for text extraction">
+                </div>
+                
+                <div class="text-result">
+                    <textarea id="extracted-text" readonly placeholder="Extracted text will appear here..."></textarea>
+                </div>
+                
+                <div class="conversion-controls">
+                    <button id="copy-text" class="btn-secondary">Copy Text</button>
+                    <button id="save-text" class="btn-primary">Save Text</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <button onclick="window.location.href='camera.html'" class="btn-secondary">Back to Camera</button>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/text-conversion.js"></script>
+</body>
+</html>

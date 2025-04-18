@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download File</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your File is Ready</h1>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </header>
+        
+        <main>
+            <div class="download-container">
+                <div class="download-icon">✅</div>
+                <h3>Conversion Complete!</h3>
+                <p>Your file has been successfully processed and is ready to download.</p>
+                
+                <button id="download-btn" class="btn-primary">Download Now</button>
+                
+                <div class="additional-options">
+                    <button class="btn-secondary">Email File</button>
+                    <button class="btn-secondary">Save to Cloud</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <button onclick="window.location.href='index.html'" class="btn-secondary">Back to Home</button>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function() {
+            // This would trigger the actual file download in a real application
+            alert('File download would start here');
+            
+            // Create a dummy download for demonstration
+            const blob = new Blob(["This is a sample downloaded file content"], {type: "text/plain"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'converted_file.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>

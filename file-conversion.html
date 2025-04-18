@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Conversion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>File Conversion</h1>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </header>
+        
+        <main>
+            <div class="conversion-options-grid">
+                <!-- PDF Conversions -->
+                <div class="conversion-option" onclick="selectConversion('pdf-to-word')">
+                    <div class="icon">📄→📝</div>
+                    <h3>PDF to Word</h3>
+                </div>
+                
+                <div class="conversion-option" onclick="selectConversion('word-to-pdf')">
+                    <div class="icon">📝→📄</div>
+                    <h3>Word to PDF</h3>
+                </div>
+                
+                <div class="conversion-option" onclick="selectConversion('pdf-to-excel')">
+                    <div class="icon">📄→📊</div>
+                    <h3>PDF to Excel</h3>
+                </div>
+                
+                <div class="conversion-option" onclick="selectConversion('excel-to-pdf')">
+                    <div class="icon">📊→📄</div>
+                    <h3>Excel to PDF</h3>
+                </div>
+                
+                <div class="conversion-option" onclick="selectConversion('image-to-pdf')">
+                    <div class="icon">🖼️→📄</div>
+                    <h3>Image to PDF</h3>
+                </div>
+                
+                <div class="conversion-option" onclick="selectConversion('pdf-to-image')">
+                    <div class="icon">📄→🖼️</div>
+                    <h3>PDF to Image</h3>
+                </div>
+                
+                <div class="conversion-option" onclick="selectConversion('split-pdf')">
+                    <div class="icon">✂️📄</div>
+                    <h3>Split PDF</h3>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <button onclick="window.location.href='index.html'" class="btn-secondary">Back to Home</button>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script>
+        function selectConversion(conversionType) {
+            // Store the conversion type in session storage
+            sessionStorage.setItem('conversionType', conversionType);
+            
+            // Redirect to upload page
+            window.location.href = 'upload-file.html';
+        }
+    </script>
+</body>
+</html>

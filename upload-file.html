@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="conversion-title">Upload File</h1>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </header>
+        
+        <main>
+            <div class="upload-container">
+                <div class="upload-box" id="drop-area">
+                    <input type="file" id="file-input" accept="" style="display:none;">
+                    <div class="upload-icon">📤</div>
+                    <h3>Drag & Drop your file here</h3>
+                    <p>or</p>
+                    <button id="browse-btn" class="btn-primary">Browse Files</button>
+                </div>
+                
+                <div class="file-info" id="file-info" style="display:none;">
+                    <h4>Selected File:</h4>
+                    <p id="file-name"></p>
+                    <p id="file-size"></p>
+                    <button id="convert-btn" class="btn-primary" disabled>Convert</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <button onclick="window.location.href='file-conversion.html'" class="btn-secondary">Back</button>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/file-conversion.js"></script>
+</body>
+</html>
